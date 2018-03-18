@@ -22,7 +22,7 @@ public class Aluno {
         this.frequencia = frequencia;
         this.notaNormal = notaNormal;
         this.notaFinal = notaFinal;
-        this.situacao=Situacao.notaFinal(frequencia, notaFinal, notaFinal);
+        this.situacao=Situacao.notaFinal(frequencia, notaNormal, notaFinal);
     }
 
     @Override
