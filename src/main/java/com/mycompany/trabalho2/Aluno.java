@@ -4,19 +4,27 @@ package com.mycompany.trabalho2;
  *
  * @author Paradellas
  */
-public class Aluno {
 
+/**
+ * Classe responsável por guardar as informações de cada aluno.
+ */
+public class Aluno {
+    /** Guarda o nome do aluno */
     private String nome;
+    /** Guarda o a frequência do aluno*/
     private float frequencia;
+    /**Guarda a média da P1 e P2 do aluno */
     private float notaNormal;
+    /**Guarda a média da Pf do aluno*/
     private float notaFinal;
+    /**Guarda Reprovado ou aprovado */
     private String situacao;
 
     public String getSituacao() {
         return situacao;
     }
     
-
+    /**Construtor para preencher todos os campos da classe aluno */
     public Aluno(String nome, float frequencia, float notaNormal, float notaFinal) {
         this.nome = nome;
         this.frequencia = frequencia;

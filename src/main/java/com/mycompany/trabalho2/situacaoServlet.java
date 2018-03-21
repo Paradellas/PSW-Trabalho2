@@ -15,16 +15,21 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/situacaoServlet")
 public class situacaoServlet extends HttpServlet {
-
+    /**Lista que guarda todos os objetos aluno */
     List<Aluno> lista= new ArrayList();
+    /**Variável para receber um aluno */
     Aluno b;
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        
+        /**Pega a informação do formulário na chave aluno*/
         String aluno = req.getParameter("aluno");
+        /**Pega a informação do formulário da chave frequencia*/
         Float freq= Float.parseFloat(req.getParameter("frequencia"));
+        /**Pega a informação do formulário da chave mediaNormal*/
         Float mn= Float.parseFloat(req.getParameter("mediaNormal"));
+        /**Pega a informação do formulário da chave mediaFinal*/
         Float mf= Float.parseFloat(req.getParameter("mediaFinal"));
+        /**Cria um objeto aluno e adciona todos os atributos pegos no formulário */
         Aluno a = new Aluno(aluno,freq,mn,mf);
         lista.add(a);
         resp.getWriter().print("<html>");
@@ -39,7 +44,7 @@ public class situacaoServlet extends HttpServlet {
         resp.getWriter().print("<th>Situação</th>");
         resp.getWriter().print("</tr>");
         
-        
+        /**Printa todas as informações de aluno que estão na lista*/
         for(int i=0; i< lista.size(); i++){
             b=lista.get(i);
             resp.getWriter().print("<tr>");
